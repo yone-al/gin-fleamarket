@@ -1,9 +1,8 @@
 package models
 
-type Item struct {
-	ID          uint
-	Name        string
-	Price       uint
-	Description string
-	SoldOut     bool
+type Todo struct {
+	ID        uint
+	Title     string
+	Content   string
+	Done      bool
 }
