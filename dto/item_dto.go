@@ -1,14 +1,12 @@
 package dto
 
-type CreateItemInput struct {
-	Name        string `json:"name" binding:"required,min=2"`
-	Price       uint   `json:"price" binding:"required,min=1,max=999999"`
-	Description string `json:"description"`
+type CreateTodoInput struct {
+	Title   string `json:"title" binding:"required,min=2"` 
+	Content string `json:"content"`
 }
 
-type UpdateItemInput struct { // ポインタ型にすることでnilを許容。フィールドが存在するときのみ更新
-	Name        *string `json:"name" binding:"omitnil,min=2"`
-	Price       *uint   `json:"price" binding:"omitnil,min=1,max=999999"`
-	Description *string `json:"description"`
-	SoldOut     *bool   `json:"soldOut"`
+type UpdateTodoInput struct {
+	Title   *string `json:"title" binding:"omitnil,min=2"` 
+	Content *string `json:"content"` 
+	Done    *bool   `json:"done"`
 }
