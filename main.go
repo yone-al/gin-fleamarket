@@ -39,6 +39,7 @@ func main() {
 	itemRouter.DELETE("/:id", itemController.Delete)
 
 	authRouter.POST("/signup", authController.Signup)
+	authRouter.POST("/login", authController.Login)
 
 	r.Run("localhost:8080") // デフォルトで0.0.0.0:8080で待機します
 }
